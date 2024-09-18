@@ -1,15 +1,17 @@
 const texts = [
-    "Data Enthusiast",
-    "Web Developer",
-    "Tech Advocate",
-    "Lifelong Learner"
+    "a Data Enthusiast",
+    "a Data Scientist",
+    "a ML Engineer",
+    "an AI Engineer",
+    "a Frontend Developer",
+    "a Mathematics Enthusiat"
 ];
 
 let index = 0;
 const typingText = document.getElementById("typingText");
 const typingSpeed = 100; // Typing speed in milliseconds
 const erasingSpeed = 50; // Erasing speed in milliseconds
-const pauseBetweenTexts = 2000; // Pause before the next text
+const pauseBetweenTexts = 500; // Pause before the next text
 
 function typeEffect(text, i = 0) {
     if (i < text.length) {
