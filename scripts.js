@@ -1,16 +1,34 @@
 const texts = [
-    "Hello, I'm typing...",
-    "Welcome to my website!",
-    "Enjoy your stay!",
-    "Feel free to explore!"
+    "Data Enthusiast",
+    "Web Developer",
+    "Tech Advocate",
+    "Lifelong Learner"
 ];
-let index = 0;
 
-function changeText() {
-    index = (index + 1) % texts.length; // Loop through the texts
-    const typingText = document.getElementById("typingText");
-    typingText.textContent = texts[index];
+let index = 0;
+const typingText = document.getElementById("typingText");
+const typingSpeed = 100; // Typing speed in milliseconds
+const erasingSpeed = 50; // Erasing speed in milliseconds
+const pauseBetweenTexts = 2000; // Pause before the next text
+
+function typeEffect(text, i = 0) {
+    if (i < text.length) {
+        typingText.textContent = text.substring(0, i + 1);
+        setTimeout(() => typeEffect(text, i + 1), typingSpeed);
+    } else {
+        setTimeout(() => eraseEffect(text), pauseBetweenTexts);
+    }
 }
 
-// Change text every loop (adjust timing as needed)
-setInterval(changeText, 3000); // 4s typing + 4s pause (total 8s)
+function eraseEffect(text, i = text.length) {
+    if (i >= 0) {
+        typingText.textContent = text.substring(0, i);
+        setTimeout(() => eraseEffect(text, i - 1), erasingSpeed);
+    } else {
+        index = (index + 1) % texts.length; // Loop through the texts
+        setTimeout(() => typeEffect(texts[index]), pauseBetweenTexts); // Pause before typing next text
+    }
+}
+
+// Start the typing effect with the first text
+typeEffect(texts[index]);

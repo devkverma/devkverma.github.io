@@ -1,25 +1,52 @@
 body {
     background-color: #282A36;
-    font-family: Arial, sans-serif; /* Set a default font for better readability */
+    font-family: Arial, sans-serif;
 }
 
 .main-header {
     color: #F8F8F2;
-    text-align: center; /* Center align the header */
+    text-align: center;
 }
 
 .job-title {
     color: #F8F8F2;
     display: flex;
     align-items: center;
-    justify-content: center; /* Center the job title */
-    margin-top: 10px; /* Add space above */
+    justify-content: center;
+    margin-top: 10px;
     position: relative;
 }
 
-.sm-link {
-    color: inherit;
-    text-decoration: none;
+.staticText {
+    margin-right: 5px;
+}
+
+.post {
+    display: inline-block;
+    position: relative;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+#typingText {
+    display: inline-block;
+    border-right: 4px solid greenyellow; /* Cursor effect */
+    animation: blink-caret 0.75s step-end infinite; /* Blinking cursor */
+    color: #F8F8F2; /* Ensure text color matches your design */
+}
+
+@keyframes blink-caret {
+    from, to {
+        border-color: transparent; /* Ensure cursor is initially transparent */
+    }
+    50% {
+        border-color: greenyellow; /* Cursor color */
+    }
+}
+
+.social-media {
+    text-align: center;
+    margin-top: 20px;
 }
 
 .logo {
@@ -27,33 +54,7 @@ body {
     margin: 10px;
 }
 
-.post {
-    display: inline-block;
-    border-right: 4px solid greenyellow; /* Ensure solid border */
-    margin-left: 5px;
-    padding-right: 5px; /* Space between text and border */
-    white-space: nowrap;
-    overflow: hidden;
-    animation: typing 3s steps(30, end) infinite, blink-caret 0.75s step-end infinite;
-}
-
-@keyframes typing {
-    0% {
-        width: 0;
-    }
-    50% {
-        width: 200px; /* Full width of the text */
-    }
-    100% {
-        width: 0; /* Reset to zero width for the loop */
-    }
-}
-
-@keyframes blink-caret {
-    from, to {
-        border-color: transparent;
-    }
-    50% {
-        border-color: greenyellow; /* Cursor color */
-    }
+.sm-link {
+    color: inherit;
+    text-decoration: none;
 }
