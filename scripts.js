@@ -34,3 +34,4 @@ function eraseEffect(text, i = text.length) {
 
 // Start the typing effect with the first text
 typeEffect(texts[index]);
+
