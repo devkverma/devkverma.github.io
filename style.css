@@ -1,38 +1,51 @@
-body{
+body {
     background-color: #282A36;
+    font-family: Arial, sans-serif; /* Set a default font for better readability */
 }
 
-.main-header{
+.main-header {
     color: #F8F8F2;
+    text-align: center; /* Center align the header */
 }
 
-.job-title{
+.job-title {
     color: #F8F8F2;
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Center the job title */
+    margin-top: 10px; /* Add space above */
+    position: relative;
 }
 
-.sm-link{
+.sm-link {
     color: inherit;
     text-decoration: none;
 }
 
-.logo{
+.logo {
     width: 20px;
-    margin: 10px 10px 10px 10px;
+    margin: 10px;
 }
 
-.post{
-    border-right: 2px greenyellow;
+.post {
+    display: inline-block;
+    border-right: 4px solid greenyellow; /* Ensure solid border */
+    margin-left: 5px;
+    padding-right: 5px; /* Space between text and border */
     white-space: nowrap;
     overflow: hidden;
-    animation: typing 4s steps(30, end), blink-caret 0.75s step-end infinite;
+    animation: typing 3s steps(30, end) infinite, blink-caret 0.75s step-end infinite;
 }
 
-@keyframes typing{
-    from {
+@keyframes typing {
+    0% {
         width: 0;
     }
-    to {
-        width: 100%; /* Final width of the text */
+    50% {
+        width: 200px; /* Full width of the text */
+    }
+    100% {
+        width: 0; /* Reset to zero width for the loop */
     }
 }
 
@@ -41,6 +54,6 @@ body{
         border-color: transparent;
     }
     50% {
-        border-color: black; /* Cursor color */
+        border-color: greenyellow; /* Cursor color */
     }
 }
