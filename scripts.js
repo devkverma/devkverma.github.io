@@ -3,7 +3,6 @@ const texts = [
     "a Data Scientist",
     "a ML Engineer",
     "an AI Engineer",
-    "a Frontend Developer",
     "a Mathematics Enthusiat"
 ];
 
